@@ -1,13 +1,13 @@
 import React from 'react'
 
-export class CharacterList extends React.Component {
-  render() {
+function CharacterList(props) {
     return (
-      <div>
-        <p> test message </p>
-      </div>
-    )
-  }
+        <div>
+            <p>
+                {props.characters}
+            </p>
+        </div>
+    );
 }
 
 export default CharacterList
