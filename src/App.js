@@ -8,6 +8,7 @@ import gotLogo from './images/gotLogo.png';
 
 import characters from './characters';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
 
 class App extends React.Component {
 
@@ -27,6 +28,7 @@ class App extends React.Component {
           Character App
         </h3>
         <CharacterList characters={Object.values(characters)}/>
+        <CharacterDetail />
       </div>
     );
   }
