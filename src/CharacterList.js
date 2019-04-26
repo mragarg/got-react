@@ -3,9 +3,17 @@ import React from 'react'
 function CharacterList(props) {
     return (
         <div>
-            <p>
-                {props.characters}
-            </p>
+            <ul>
+                {
+                    props.characters.map((character, i) => {
+                        return (
+                            <li key={i}>
+                                {character.name}
+                            </li>
+                        )
+                    })
+                }
+            </ul>
         </div>
     );
 }

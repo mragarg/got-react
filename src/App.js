@@ -19,14 +19,14 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(Object.keys(characters));
+    console.log(Object.values(characters));
     return (
       <div className="App text-center">
         <img src={gotLogo} className="App-logo w-50" alt="logo" />
         <h3>
           Character App
         </h3>
-        <CharacterList characters={Object.keys(characters)}/>
+        <CharacterList characters={Object.values(characters)}/>
       </div>
     );
   }
