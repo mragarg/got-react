@@ -15,23 +15,33 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      character: ''
     }
   }
 
   render() {
-    console.log(Object.values(characters));
+    // console.log(Object.values(characters));
     return (
       <div className="App text-center">
         <img src={gotLogo} className="App-logo w-50" alt="logo" />
         <h3>
           Character App
         </h3>
-        <CharacterList characters={Object.values(characters)}/>
-        <CharacterDetail />
+        {
+          this.state.character ? <CharacterDetail characterObject={this.state.character}/> : null
+        }
+        <CharacterList characters={Object.values(characters)} handleClick={this._setCharacterState}/>
       </div>
     );
   }
+
+  _setCharacterState = (character) => {
+    console.log(`You picked ${character.name}!`)
+    console.log(`You picked ${character}!`)
+    this.setState({
+      character
+    });
+  };
 
 }
 

@@ -7,7 +7,13 @@ function CharacterList(props) {
             {
                 props.characters.map((character, i) => {
                     return (
-                        <a href="#" key={i} className="list-group-item list-group-action">
+                        <a href="#" 
+                            key={i} 
+                            className="list-group-item list-group-action"
+                            onClick={() => {
+                                props.handleClick(character);
+                            }}
+                        >
                             {character.name}
                         </a>
                     );
