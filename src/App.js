@@ -22,15 +22,24 @@ class App extends React.Component {
   render() {
     // console.log(Object.values(characters));
     return (
-      <div className="App text-center">
+      <div className="text-center">
         <img src={gotLogo} className="App-logo w-50" alt="logo" />
-        <h3>
+
+        <h3 className="pb-5">
           Character App
         </h3>
-        {
-          this.state.character ? <CharacterDetail characterObject={this.state.character}/> : null
-        }
-        <CharacterList characters={Object.values(characters)} handleClick={this._setCharacterState}/>
+
+        <div className="row">
+          <div className="col-4">
+            <CharacterList characters={Object.values(characters)} handleClick={this._setCharacterState}/>
+          </div>
+          <div className="col-8 text-left">
+            {
+              this.state.character ? <CharacterDetail characterObject={this.state.character}/> : null
+            }
+          </div>
+        </div>
+
       </div>
     );
   }
